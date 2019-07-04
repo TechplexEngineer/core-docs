@@ -16,7 +16,8 @@
     "hexo-renderer-less": "^0.2.0",
     "hexo-server": "^0.1.2",
     "hexo-typescript-api-box": "^0.8.0",
-    "typedoc": "^0.5.0"
+    "typedoc": "^0.5.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "hexo-s3-deploy": "^1.2.1"
@@ -26,6 +27,9 @@
     "prestart": "npm run build",
     "start": "hexo serve",
     "predeploy": "npm run build",
-    "deploy": "hexo-s3-deploy"
-  }
+    "deploy": "hexo-s3-deploy",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
